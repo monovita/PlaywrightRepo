@@ -23,15 +23,30 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [
+    ['html', { open: 'always' }], // 'on-failure'
+    ['list', { printSteps: true }],
+    ['json', {  outputFile: 'test-results.json' }]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     actionTimeout: 10 * 1000,
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'https://qauto.forstudy.space/',
+    httpCredentials: {
+              username: 'guest',
+              password: 'welcome2qauto',
+            },
+
+    // Capture screenshot after each test failure.
+    screenshot: 'only-on-failure', // Options include 'off', 'on' and 'only-on-failure'
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on-first-retry', // Options include: 'off', 'on', 'retain-on-failure' and 'on-first-retry'
+
+    // Record video only when retrying a test for the first time.
+    video: 'on-first-retry' // Options include: 'off', 'on', 'retain-on-failure' and 'on-first-retry'
+
   },
 
   /* Configure projects for major browsers */
@@ -58,7 +73,7 @@ export default defineConfig({
     // },
     {
       name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
+      use: { ...devices['iPhone 17'] },
     },
 
     /* Test against branded browsers. */
