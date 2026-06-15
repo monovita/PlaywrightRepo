@@ -14,7 +14,7 @@ test.describe('LogIn positive tests', () => {
 
   test('User is logedIn', async ({ page }) => {
     const logInForm = new LogInForm(page);
-    await logInForm.userLogin(page, credentials.userEmail, credentials.userPassword);
+    await logInForm.userLogin(page, process.env.USERNAME, process.env.PASSWORD);
     await expect(page).toHaveURL(`/` + `panel/garage`);
   });
 });

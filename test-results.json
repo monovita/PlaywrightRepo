@@ -70,8 +70,56 @@
         "metadata": {
           "actualWorkers": 1
         },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "Mobile Safari",
         "name": "Mobile Safari",
+        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Microsoft Edge",
+        "name": "Microsoft Edge",
+        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Google Chrome",
+        "name": "Google Chrome",
         "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
         "testIgnore": [],
         "testMatch": [
@@ -140,15 +188,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 195,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2617,
+                      "duration": 2863,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-14T14:45:59.003Z",
+                      "startTime": "2026-06-15T12:15:19.758Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -174,8 +222,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-14T14:45:58.641Z",
-    "duration": 3209.3840000000782,
+    "startTime": "2026-06-15T12:15:19.392Z",
+    "duration": 3544.188000000082,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
