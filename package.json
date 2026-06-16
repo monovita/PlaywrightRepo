@@ -14,9 +14,17 @@
   "author": "",
   "type": "module",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "pw:run:prod": "ENVIRONMENT=prod npx playwright test",
+    "pw:run:staging": "ENVIRONMENT=staging npx playwright test",
+    "pw:open:prod": "ENVIRONMENT=prod npx playwright test --ui",
+    "pw:open:staging": "ENVIRONMENT=staging npx playwright test --ui"
+  },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }
