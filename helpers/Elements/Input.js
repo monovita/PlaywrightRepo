@@ -22,6 +22,10 @@ export default class extends BaseElement {
         await this.element.clear();
     }
 
+    async click() {
+        await this.element.click();
+    }
+
     async fillAndBlurAndClear(value) {
         await this.element.fill(value);
         await this.element.blur();
