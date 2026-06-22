@@ -6,8 +6,6 @@ import path from 'path';
 const env = process.env.ENVIRONMENT;
 
 dotenv.config({ path: `.env.${env}`});
-//dotenv.config({ path: '.env.prod' });
-//dotenv.config({ path: '.env.staging' });
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -24,7 +22,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', { open: 'always' }], // 'on-failure'
+    ['html', { open: 'always' }], // OR 'on-failure'
     ['list', { printSteps: true }],
     ['json', {  outputFile: 'test-results.json' }]
   ],
@@ -52,9 +50,18 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'setup',
+      testMatch: /auth\.setup\.js/,
     },
+
+    {
+      name: 'chromium',
+      use: {
+            ...devices['Desktop Chrome'],
+            storageState: 'playwright/.auth/user.json', 
+          },
+          dependencies: ['setup'],
+        },
 
     {
       name: 'firefox',

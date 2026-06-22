@@ -22,6 +22,22 @@
         "metadata": {
           "actualWorkers": 1
         },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/auth\\.setup\\.js/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "chromium",
         "name": "chromium",
         "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
@@ -163,6 +179,54 @@
   },
   "suites": [
     {
+      "title": "auth.setup.js",
+      "file": "auth.setup.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2603,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-21T13:45:49.022Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/auth.setup.js-authenticate-setup/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f376efe52c54b1a876fd-9d03a3bb502e264caa3f",
+          "file": "auth.setup.js",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
       "title": "logInPositiveTests.spec.js",
       "file": "logInPositiveTests.spec.js",
       "column": 0,
@@ -177,7 +241,7 @@
           "specs": [
             {
               "title": "User is logedIn",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -188,26 +252,60 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 20,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2863,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 15986,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://qauto.forstudy.space/\"\u001b[39m\nReceived: \u001b[31m\"https://qauto.forstudy.space/\u001b[7mpanel/garage\u001b[27m\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    34 × unexpected value \"https://qauto.forstudy.space/panel/garage\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://qauto.forstudy.space/\"\u001b[39m\nReceived: \u001b[31m\"https://qauto.forstudy.space/\u001b[7mpanel/garage\u001b[27m\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    34 × unexpected value \"https://qauto.forstudy.space/panel/garage\"\u001b[22m\n\n    at /Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js:12:24",
+                        "location": {
+                          "file": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js",
+                          "column": 24,
+                          "line": 12
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m   test(\u001b[32m'User is logedIn'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js",
+                            "column": 24,
+                            "line": 12
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://qauto.forstudy.space/\"\u001b[39m\nReceived: \u001b[31m\"https://qauto.forstudy.space/\u001b[7mpanel/garage\u001b[27m\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    34 × unexpected value \"https://qauto.forstudy.space/panel/garage\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 10 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m   test(\u001b[32m'User is logedIn'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js:12:24\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-15T12:15:19.758Z",
+                      "startTime": "2026-06-21T13:45:52.095Z",
                       "annotations": [],
                       "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/logInPositiveTests-LogIn-positive-tests-User-is-logedIn-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/logInPositiveTests-LogIn-positive-tests-User-is-logedIn-chromium/error-context.md"
+                        },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
                           "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/logInPositiveTests-LogIn-positive-tests-User-is-logedIn-chromium/trace.zip"
                         }
-                      ]
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js",
+                        "column": 24,
+                        "line": 12
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "9c98a6665ff6eb8925a2-ba2864b70c62cbbb48a3",
@@ -222,11 +320,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-15T12:15:19.392Z",
-    "duration": 3544.188000000082,
+    "startTime": "2026-06-21T13:45:48.621Z",
+    "duration": 19590.523000000016,
     "expected": 1,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
