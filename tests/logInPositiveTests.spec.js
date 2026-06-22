@@ -1,4 +1,3 @@
-// @ts-check
 import { test, expect } from '@playwright/test';
 import { describe } from 'node:test';
 import { LogInForm } from "../helpers/Page Objects/logInForm.js";
