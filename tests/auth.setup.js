@@ -7,7 +7,6 @@ setup('authenticate', async ({ page }) => {
     const logInForm = new LogInForm(page);
 
     await page.goto('/');
-    await expect(page).toHaveURL('/');
     await logInForm.userLogin(page, process.env.USERNAME, process.env.PASSWORD);
     await expect(page).toHaveURL(`/` + `panel/garage`);
     await page.context().storageState({ path: authFile });

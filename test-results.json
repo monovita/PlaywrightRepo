@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "setup",
         "name": "setup",
@@ -36,12 +36,34 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
+        },
+        "id": "login-tests",
+        "name": "login-tests",
+        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/logInPositiveTests\\.spec\\.js/",
+          "/registrationPositiveTests\\.spec\\.js/",
+          "/registrationNegativeTests\\.spec\\.js/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
         },
         "id": "chromium",
         "name": "chromium",
         "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [],
+        "testIgnore": [
+          "/logInPositiveTests\\.spec\\.js/",
+          "/registrationPositiveTests\\.spec\\.js/",
+          "/registrationNegativeTests\\.spec\\.js/"
+        ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
@@ -52,7 +74,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "firefox",
         "name": "firefox",
@@ -68,7 +90,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "webkit",
         "name": "webkit",
@@ -84,7 +106,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "Mobile Chrome",
         "name": "Mobile Chrome",
@@ -100,7 +122,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "Mobile Safari",
         "name": "Mobile Safari",
@@ -116,7 +138,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "Microsoft Edge",
         "name": "Microsoft Edge",
@@ -132,7 +154,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "Google Chrome",
         "name": "Google Chrome",
@@ -197,15 +219,15 @@
               "projectName": "setup",
               "results": [
                 {
-                  "workerIndex": 19,
+                  "workerIndex": 36,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2603,
+                  "duration": 2730,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-21T13:45:49.022Z",
+                  "startTime": "2026-06-22T14:34:11.468Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -227,21 +249,21 @@
       ]
     },
     {
-      "title": "logInPositiveTests.spec.js",
-      "file": "logInPositiveTests.spec.js",
+      "title": "addCarPositiveTests.spec.js",
+      "file": "addCarPositiveTests.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "LogIn positive tests",
-          "file": "logInPositiveTests.spec.js",
-          "line": 9,
+          "title": "Add car and fuel positive tests",
+          "file": "addCarPositiveTests.spec.js",
+          "line": 6,
           "column": 6,
           "specs": [
             {
-              "title": "User is logedIn",
-              "ok": false,
+              "title": "Car is added",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -252,65 +274,111 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 20,
+                      "workerIndex": 37,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 15986,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://qauto.forstudy.space/\"\u001b[39m\nReceived: \u001b[31m\"https://qauto.forstudy.space/\u001b[7mpanel/garage\u001b[27m\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    34 × unexpected value \"https://qauto.forstudy.space/panel/garage\"\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://qauto.forstudy.space/\"\u001b[39m\nReceived: \u001b[31m\"https://qauto.forstudy.space/\u001b[7mpanel/garage\u001b[27m\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    34 × unexpected value \"https://qauto.forstudy.space/panel/garage\"\u001b[22m\n\n    at /Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js:12:24",
-                        "location": {
-                          "file": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js",
-                          "column": 24,
-                          "line": 12
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m   test(\u001b[32m'User is logedIn'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js",
-                            "column": 24,
-                            "line": 12
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"https://qauto.forstudy.space/\"\u001b[39m\nReceived: \u001b[31m\"https://qauto.forstudy.space/\u001b[7mpanel/garage\u001b[27m\"\u001b[39m\nTimeout:  15000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 15000ms\u001b[22m\n\u001b[2m    34 × unexpected value \"https://qauto.forstudy.space/panel/garage\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 10 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[32m\"/\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m   test(\u001b[32m'User is logedIn'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js:12:24\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 1569,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-21T13:45:52.095Z",
+                      "startTime": "2026-06-22T14:34:14.733Z",
                       "annotations": [],
                       "attachments": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/logInPositiveTests-LogIn-positive-tests-User-is-logedIn-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/logInPositiveTests-LogIn-positive-tests-User-is-logedIn-chromium/error-context.md"
-                        },
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/addCarPositiveTests-Add-ca-77df6-positive-tests-Car-is-added-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "07770341e8be7c749452-b59d20bf9e42298e4251",
+              "file": "addCarPositiveTests.spec.js",
+              "line": 7,
+              "column": 2
+            },
+            {
+              "title": "Fuel expense is added",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 38,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3633,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T14:34:14.733Z",
+                      "annotations": [],
+                      "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/logInPositiveTests-LogIn-positive-tests-User-is-logedIn-chromium/trace.zip"
+                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/addCarPositiveTests-Add-ca-d03ef-tests-Fuel-expense-is-added-chromium/trace.zip"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests/logInPositiveTests.spec.js",
-                        "column": 24,
-                        "line": 12
-                      }
+                      ]
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "9c98a6665ff6eb8925a2-ba2864b70c62cbbb48a3",
-              "file": "logInPositiveTests.spec.js",
-              "line": 15,
+              "id": "07770341e8be7c749452-e7b8860102c383342287",
+              "file": "addCarPositiveTests.spec.js",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "Delete all cars",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 39,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1065,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-06-22T14:34:14.733Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/addCarPositiveTests-Add-ca-fd485-itive-tests-Delete-all-cars-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "07770341e8be7c749452-746b1336ab3f6cb8c2a0",
+              "file": "addCarPositiveTests.spec.js",
+              "line": 19,
               "column": 3
             }
           ]
@@ -320,11 +388,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-21T13:45:48.621Z",
-    "duration": 19590.523000000016,
-    "expected": 1,
+    "startTime": "2026-06-22T14:34:11.107Z",
+    "duration": 7481.808000000194,
+    "expected": 4,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
