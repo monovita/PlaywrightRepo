@@ -1,10 +1,7 @@
 import { expect } from '@playwright/test';
-// import { Credentials } from "../helpers/Page Objects/credentials.js";
 import { GaragePage } from "../helpers/Page Objects/garagePage.js";
 import { FuelExpenses } from "../helpers/Page Objects/fuelExpensesPage.js";
 import { test } from "../helpers/fixtures/userGaragePage.js";
-
-
 
 test.describe('Add car and fuel positive tests', () => {
  test('Car is added', async ({ page, innerFixtureAddCar }) => {

@@ -10,9 +10,8 @@ import { test as base } from '@playwright/test';
 export const test = base.extend({
 
   userGaragePage: async ({ page }, use) => {
-        await page.goto('/panel/garage');
-        await expect(page).toHaveURL(`/` + `panel/garage`);
-
+        await page.goto(`panel/garage`);
+        await expect(page).toHaveURL(`panel/garage`);
         const garagePage = new GaragePage(page);
         await use(garagePage);
     },
