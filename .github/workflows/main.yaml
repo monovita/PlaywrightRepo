@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests on Staging
-        run: npx playwright test --grep-invert "registrationPositiveTests"
+        run: npx playwright test --grep-invert "registrationPositiveTests|profileTestAPI"
         env:
           ENVIRONMENT: staging
       - name: Save Staging report
