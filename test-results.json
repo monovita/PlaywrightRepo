@@ -97,7 +97,9 @@
         "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          "/logInPositiveTests\\.spec\\.js/",
+          "/registrationPositiveTests\\.spec\\.js/",
+          "/registrationNegativeTests\\.spec\\.js/"
         ],
         "timeout": 60000
       },
@@ -143,9 +145,10 @@
         "id": "Microsoft Edge",
         "name": "Microsoft Edge",
         "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        "testIgnore": [
+          "/logInPositiveTests\\.spec\\.js/",
+          "/registrationPositiveTests\\.spec\\.js/",
+          "/registrationNegativeTests\\.spec\\.js/"
         ],
         "timeout": 60000
       },

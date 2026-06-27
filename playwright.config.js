@@ -63,7 +63,12 @@ export default defineConfig({
     },
 
     {
-      name: 'chromium',
+      name: 'login-tests',
+      testMatch: [
+      /logInPositiveTests\.spec\.js/,
+      /registrationPositiveTests\.spec\.js/,
+      /registrationNegativeTests\.spec\.js/,
+      ],
       use: {
             ...devices['Desktop Chrome'],
             storageState: 'playwright/.auth/user.json', 
@@ -80,29 +85,48 @@ export default defineConfig({
     },
 
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+      name: 'chromium',
+      testIgnore: [
+      /logInPositiveTests\.spec\.js/,
+      /registrationPositiveTests\.spec\.js/,
+      /registrationNegativeTests\.spec\.js/,
+      ],
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json',
+      },
+      dependencies: ['setup'],
+      },
+
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 17'] },
-    },
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: { ...devices['Pixel 5'] },
+    // },
+    // {
+    //   name: 'Mobile Safari',
+    //   use: { ...devices['iPhone 17'] },
+    // },
 
     /* Test against branded browsers. */
-    {
-      name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    },
-    {
-      name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    },
+    // {
+    //   name: 'Microsoft Edge',
+    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    // },
+    // {
+    //   name: 'Google Chrome',
+    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    // },
   ],
 
   /* Run your local dev server before starting the tests */
@@ -112,7 +136,7 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
   expect: {
-    timeout: 15 * 1000,
+    timeout: 10 * 1000,
   },
 
   timeout: 60 * 1000,
