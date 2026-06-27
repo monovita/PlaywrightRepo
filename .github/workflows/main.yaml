@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests on Staging
-        run: npx playwright test --ignore "**/registrationPositiveTests.spec.js"
+        run: npx playwright test --grep-invert "registrationPositiveTests"
         env:
           ENVIRONMENT: staging
       - name: Save Staging report
@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests on Production
-        run: npx playwright test --ignore "**/registrationPositiveTests.spec.js"
+        run: npx playwright test --grep-invert "registrationPositiveTests"
         env:
           ENVIRONMENT: prod
       - name: Save Production report
