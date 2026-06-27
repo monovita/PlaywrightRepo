@@ -1,48 +1,58 @@
-name: Playwright Tests
-on: workflow_dispatch
+name: Playwright Tests HW 31
+on: push
 jobs:
-  test-staging:
-    timeout-minutes: 60
+  playwright-staging:
+    name: 'Playwright Tests HW 31 - Staging'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm install
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests on Staging
-      run: npx playwright test
-      env:
-        ENVIRONMENT: staging
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report-staging
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          NPM_CONFIG_PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
+      - name: Run tests on Staging
+        run: npx playwright test
+        env:
+          ENVIRONMENT: staging
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
+      - name: Save Staging report
+        uses: actions/upload-artifact@v4
+        with:
+          path: html/report
+          name: Staging report
+        if: always()
 
-  test-prod:
-    timeout-minutes: 60
+  playwright-prod:
+    name: 'Playwright Tests HW 31 - Production'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm install
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests on Production
-      run: npx playwright test
-      env:
-        ENVIRONMENT: prod
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report-prod
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          NPM_CONFIG_PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
+      - name: Run tests on Production
+        run: npx playwright test
+        env:
+          ENVIRONMENT: prod
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
+      - name: Save Production report
+        uses: actions/upload-artifact@v4
+        with:
+          path: html/report
+          name: Production report
+        if: always()
