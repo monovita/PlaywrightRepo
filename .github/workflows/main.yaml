@@ -1,8 +1,8 @@
 name: Playwright Tests HW 31
 on: push
 jobs:
-  playwright:
-    name: 'Playwright Tests HW 31'
+  playwright-staging:
+    name: 'Playwright Tests HW 31 - Staging'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.39.0-jammy
@@ -13,16 +13,39 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-      - name: Run your tests
+      - name: Run tests on Staging
         run: npx playwright test
-      - name: Save report
+        env:
+          ENVIRONMENT: staging
+      - name: Save Staging report
         uses: actions/upload-artifact@v4
         with:
           path: html/report
-          name: Main report
+          name: Staging report
         if: always()
-      - name: Get report
-        uses: actions/download-artifact@v4
+
+  playwright-prod:
+    name: 'Playwright Tests HW 31 - Production'
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.39.0-jammy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          name: Main report
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests on Production
+        run: npx playwright test
+        env:
+          ENVIRONMENT: prod
+      - name: Save Production report
+        uses: actions/upload-artifact@v4
+        with:
+          path: html/report
+          name: Production report
         if: always()
+
+
+        
