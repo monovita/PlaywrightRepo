@@ -12,11 +12,16 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          NPM_CONFIG_PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Run tests on Staging
         run: npx playwright test
         env:
           ENVIRONMENT: staging
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Save Staging report
         uses: actions/upload-artifact@v4
         with:
@@ -35,17 +40,19 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          NPM_CONFIG_PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Run tests on Production
         run: npx playwright test
         env:
           ENVIRONMENT: prod
+          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Save Production report
         uses: actions/upload-artifact@v4
         with:
           path: html/report
           name: Production report
         if: always()
-
-
-        
