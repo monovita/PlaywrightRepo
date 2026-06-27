@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright Tests HW 31
 on:
   push:
     branches: [ main, master ]
@@ -6,13 +6,13 @@ on:
     branches: [ main, master ]
 jobs:
   playwright:
-    name: 'Playwright Tests'
+    name: 'Playwright Tests HW 31'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.39.0-jammy
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
       - name: Install dependencies
@@ -20,13 +20,13 @@ jobs:
       - name: Run your tests
         run: npx playwright test
       - name: Save report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: html/report
           name: Main report
         if: always()
       - name: Get report
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: Main report
         if: always()
