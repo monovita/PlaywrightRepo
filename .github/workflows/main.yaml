@@ -1,11 +1,12 @@
 name: Playwright Tests HW 31
 on: push
+
 jobs:
   playwright-staging:
     name: 'Playwright Tests HW 31 - Staging'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:latest
+      image: mcr.microsoft.com/playwright:v1.60.0-jammy
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -13,19 +14,14 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-        env:
-          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-          NPM_CONFIG_PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Run tests on Staging
         run: npx playwright test
         env:
           ENVIRONMENT: staging
-          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Save Staging report
         uses: actions/upload-artifact@v4
         with:
-          path: html/report
+          path: playwright-report/
           name: Staging report
         if: always()
 
@@ -33,7 +29,7 @@ jobs:
     name: 'Playwright Tests HW 31 - Production'
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:latest
+      image: mcr.microsoft.com/playwright:v1.60.0-jammy
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -41,18 +37,13 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci
-        env:
-          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-          NPM_CONFIG_PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Run tests on Production
         run: npx playwright test
         env:
           ENVIRONMENT: prod
-          PLAYWRIGHT_BROWSERS_PATH: '/ms-playwright'
       - name: Save Production report
         uses: actions/upload-artifact@v4
         with:
-          path: html/report
+          path: playwright-report/
           name: Production report
         if: always()
