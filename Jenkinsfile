@@ -5,6 +5,9 @@ pipeline {
             args '-u root' 
         }
     }
+    tools {
+        nodejs 'NodeJS' 
+    }
     stages {
         stage('Install') {
             steps {
