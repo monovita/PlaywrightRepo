@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "setup",
         "name": "setup",
@@ -36,7 +36,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "login-tests",
         "name": "login-tests",
@@ -54,7 +54,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -64,105 +64,6 @@
           "/registrationPositiveTests\\.spec\\.js/",
           "/registrationNegativeTests\\.spec\\.js/"
         ],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "firefox",
-        "name": "firefox",
-        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "webkit",
-        "name": "webkit",
-        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "/logInPositiveTests\\.spec\\.js/",
-          "/registrationPositiveTests\\.spec\\.js/",
-          "/registrationNegativeTests\\.spec\\.js/"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "Mobile Chrome",
-        "name": "Mobile Chrome",
-        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "Mobile Safari",
-        "name": "Mobile Safari",
-        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "Microsoft Edge",
-        "name": "Microsoft Edge",
-        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [
-          "/logInPositiveTests\\.spec\\.js/",
-          "/registrationPositiveTests\\.spec\\.js/",
-          "/registrationNegativeTests\\.spec\\.js/"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "Google Chrome",
-        "name": "Google Chrome",
-        "testDir": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/tests",
-        "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
@@ -222,15 +123,15 @@
               "projectName": "setup",
               "results": [
                 {
-                  "workerIndex": 36,
+                  "workerIndex": 4,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2730,
+                  "duration": 2602,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-22T14:34:11.468Z",
+                  "startTime": "2026-06-27T14:45:42.681Z",
                   "annotations": [],
                   "attachments": [
                     {
@@ -252,20 +153,20 @@
       ]
     },
     {
-      "title": "addCarPositiveTests.spec.js",
-      "file": "addCarPositiveTests.spec.js",
+      "title": "api/profileTestAPI.spec.js",
+      "file": "api/profileTestAPI.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Add car and fuel positive tests",
-          "file": "addCarPositiveTests.spec.js",
-          "line": 6,
+          "title": "API -- Profile page",
+          "file": "api/profileTestAPI.spec.js",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "Car is added",
+              "title": "User Profile is modified",
               "ok": true,
               "tags": [],
               "tests": [
@@ -277,21 +178,21 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 37,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1569,
+                      "duration": 959,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-06-22T14:34:14.733Z",
+                      "startTime": "2026-06-27T14:45:45.674Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/addCarPositiveTests-Add-ca-77df6-positive-tests-Car-is-added-chromium/trace.zip"
+                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/api-profileTestAPI-API-----bc61f-ge-User-Profile-is-modified-chromium/trace.zip"
                         }
                       ]
                     }
@@ -299,89 +200,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "07770341e8be7c749452-b59d20bf9e42298e4251",
-              "file": "addCarPositiveTests.spec.js",
-              "line": 7,
-              "column": 2
-            },
-            {
-              "title": "Fuel expense is added",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 38,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3633,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-22T14:34:14.733Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/addCarPositiveTests-Add-ca-d03ef-tests-Fuel-expense-is-added-chromium/trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "07770341e8be7c749452-e7b8860102c383342287",
-              "file": "addCarPositiveTests.spec.js",
-              "line": 11,
-              "column": 3
-            },
-            {
-              "title": "Delete all cars",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 39,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 1065,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-06-22T14:34:14.733Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/amedelian/Downloads/Hillel/PlaywrightRepo/test-results/addCarPositiveTests-Add-ca-fd485-itive-tests-Delete-all-cars-chromium/trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "07770341e8be7c749452-746b1336ab3f6cb8c2a0",
-              "file": "addCarPositiveTests.spec.js",
-              "line": 19,
+              "id": "d68de25d6a2c5ac3d635-d8a335d430da73180a1c",
+              "file": "api/profileTestAPI.spec.js",
+              "line": 4,
               "column": 3
             }
           ]
@@ -391,9 +212,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-22T14:34:11.107Z",
-    "duration": 7481.808000000194,
-    "expected": 4,
+    "startTime": "2026-06-27T14:45:42.347Z",
+    "duration": 4415.042000000001,
+    "expected": 2,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
